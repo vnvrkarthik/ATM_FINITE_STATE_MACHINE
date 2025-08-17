@@ -45,7 +45,7 @@ always @(*) begin
     nextstate = currentstate;
     card_eject=0;
     display = 3'b00;
-    cash_out = 0;receipt_out=0;
+    cash_out = 0;receipt_out=0;transaction_success=0;
     case (currentstate)
         IDLE: disp_eject_nextstate(`Welcome_screen,`hold,card_in ? CARD_INSERTED : IDLE);
         CARD_INSERTED: disp_eject_nextstate(`Processing,`hold,ENTER_PIN);
